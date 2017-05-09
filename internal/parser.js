@@ -1,17 +1,12 @@
-var parser = {};
-var quoteRegExp = /['"]/;
-var dependencyRegExp = /^((.*)\!)*(.*?)(\?.*?)?$/;
+var stripComments = require("strip-comments"),
+    parser = {},
+    quoteRegExp = /['"]/,
+    dependencyRegExp = /^((.*)\!)*(.*?)(\?.*?)?$/;
 
 // define([...] - for standard amd modules
 var defineAmdRegExp = /(\s*define\s*\(\s*)\[([^\]]*?)\]/m;
 // define({...}) - for nls modules
 var defineNlsRegExp = /(\s*define\s*\(\s*)\(?\{([\s\S]*)\}\)?\s*\)/m;
-
-// Simple comment cutting: // and /* */
-parser.cutComments = function(str){
-    return str.replace(/\/\/.*$/mg, '').  // single-line
-    replace(/\/\*[\s\S]*?\*\//g, '');     // multi-line
-};
 
 // parse dojo AMD-modules and return:
 // {
@@ -19,7 +14,7 @@ parser.cutComments = function(str){
 //      save: function(new_deps, inject) - return content string with replaced dependencies and injected code
 // }
 parser.parseModule = function(content){
-    content = parser.cutComments(content);
+    content = stripComments(content);
     var define_match = defineAmdRegExp.exec(content),
         result = {
             deps: [],
@@ -30,7 +25,7 @@ parser.parseModule = function(content){
     if (define_match){
         // Process header of module ctor func:
         var function_match = /function\s*\(([\s\S]*?)\)/.exec(content.substring(define_match.index + define_match[0].length));
-        var function_arguments_text = parser.cutComments(function_match[1]);
+        var function_arguments_text = function_match[1];
         var function_arguments_array = function_arguments_text.split(",");
         var function_arguments_count = function_arguments_array.length; // count of really used dependencies
         if (function_arguments_count == 1 && function_arguments_text.trim() == '') function_arguments_count = 0;
@@ -44,8 +39,6 @@ parser.parseModule = function(content){
             var cur_chunk = 0;
             // list of module depencies: "module1", 'module2' ...
             var cur_incl_str = define_match[2];
-            // remove comments from dependency block:
-            cur_incl_str = parser.cutComments(cur_incl_str);
             var dep_strpos_start;
             while ((dep_strpos_start = cur_incl_str.search(quoteRegExp)) >= 0){
                 save_template_chunks[cur_chunk] = (save_template_chunks[cur_chunk] ? save_template_chunks[cur_chunk] : '') +
