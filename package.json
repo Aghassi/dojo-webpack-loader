@@ -20,7 +20,8 @@
     "url" : "https://github.com/Nordth/dojo-webpack-loader.git"
   },
   "dependencies": {
-    "raw-loader": "^0.5.1"
+    "raw-loader": "^0.5.1",
+    "strip-comments": "^0.4.4"
   },
   "bugs": {
     "url": "https://github.com/Nordth/dojo-webpack-loader/issues"
