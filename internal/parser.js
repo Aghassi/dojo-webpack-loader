@@ -19,13 +19,14 @@ parser.cutComments = function(str){
 //      save: function(new_deps, inject) - return content string with replaced dependencies and injected code
 // }
 parser.parseModule = function(content){
-    var define_match = defineAmdRegExp.exec(content);
-    var result = {
-        deps: [],
-        save: null,
-        type: null,
-        moduleBody: null
-    };
+    content = parser.cutComments(content);
+    var define_match = defineAmdRegExp.exec(content),
+        result = {
+            deps: [],
+            save: null,
+            type: null,
+            moduleBody: null
+        };
     if (define_match){
         // Process header of module ctor func:
         var function_match = /function\s*\(([\s\S]*?)\)/.exec(content.substring(define_match.index + define_match[0].length));
@@ -115,13 +116,12 @@ parser.parseModule = function(content){
             }
         }
     } else {
-        var content_no_comments = parser.cutComments(content);
-        var nls_match = defineNlsRegExp.exec(content_no_comments);
+        var nls_match = defineNlsRegExp.exec(content);
         if (nls_match){
             result.moduleBody =  "{" + nls_match[2] + "}";
             result.type = "nls";
             result.save = function (deps, inject){
-                var res_str = content_no_comments.substr(0, nls_match.index);
+                var res_str = content.substr(0, nls_match.index);
                 // define(
                 res_str += nls_match[1];
                 if (inject && (inject.prepend || inject.append || inject.dependencies.length > 0)){
@@ -143,7 +143,7 @@ parser.parseModule = function(content){
                 else res_str += this.moduleBody;
                 // define(...);
                 res_str += ")";
-                res_str += content_no_comments.substr(nls_match.index + nls_match[0].length);
+                res_str += content.substr(nls_match.index + nls_match[0].length);
                 return res_str;
             }
         }
