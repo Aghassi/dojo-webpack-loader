@@ -1,6 +1,7 @@
-var defaultOptions = require("./defaultOptions");
-var path = require("path");
-var parser = require("./internal/parser");
+var defaultOptions = require("./defaultOptions"),
+    loaderUtils = require("loader-utils"),
+    path = require("path"),
+    parser = require("./internal/parser");
 
 // Get relative path to dependency inside dojo-webpack-loader
 function loaderLibDependency(module, dep_str){
@@ -208,7 +209,7 @@ function DojoWebpackLoader(content){
     // console.log(this.resourcePath);
 
     // Prepare options
-    var dojoWebpackLoaderOptions = this.options.dojoWebpackLoader;
+    var dojoWebpackLoaderOptions = loaderUtils.getOptions(this);
     var options = Object.assign({}, defaultOptions, dojoWebpackLoaderOptions);
     options.staticHasFeatures = Object.assign({}, defaultOptions.staticHasFeatures, dojoWebpackLoaderOptions.staticHasFeatures);
 
