@@ -14,7 +14,10 @@ var defineNlsRegExp = /(\s*define\s*\(\s*)\(?\{([\s\S]*)\}\)?\s*\)/m;
 //      save: function(new_deps, inject) - return content string with replaced dependencies and injected code
 // }
 parser.parseModule = function(content){
-    content = stripComments(content);
+    // Skip single line comments since this can also end up removing regex by accident
+    content = stripComments(content, {
+        line: false
+    });
     var define_match = defineAmdRegExp.exec(content),
         result = {
             deps: [],
