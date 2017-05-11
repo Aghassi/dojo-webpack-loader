@@ -22,42 +22,7 @@ module: {
                         includeLanguages: ['en'],
 
                         staticHasFeatures: {
-                            // The trace & log APIs are used for debugging the loader,
-                            // so we don't need them in the build
-                            'dojo-trace-api': 0,
-                            'dojo-log-api': 0,
-                            // This causes normally private loader data to be exposed for debugging,
-                            // so we don't need that either
-                            'dojo-publish-privates': 0,
-                            // We're fully async, so get rid of the legacy loader
-                            'dojo-sync-loader': 0,
-
-                            // We aren't loading tests in production
-                            'dojo-test-sniff': 0,
-
-                            // No need for IE6 select bleedthrough workaround
-                            'config-bgIframe': 0,
-
-                            'config-tlmSiblingOfDojo': 0,
-                            'dojo-built': 1,
-                            'host-node': 0,
-                            'host-rhino': 0,
-                            'dom': 1,
-                            'dom-qsa': 1,
-                            'dom-qsa3': 1,
-                            'host-browser': 1,
-
-                            'dojo-inject-api': 1,
-                            'dojo-loader-eval-hint-url': 1,
-                            'dojo-combo-api': 0,
-                            'dojo-undef-api': 0,
-                            'config-dojo-loader-catches': 0,
-                            'config-stripStrict': 0,
-                            'dojo-timeout-api': 0,
-                            'dojo-dom-ready-api': 0,
-                            'dojo-amd-factory-scan': 0,
-                            'dijit-legacy-requires': 0,
-                            'dojo-unit-tests': 0
+                            ...
                         }
                     }
                 }]
