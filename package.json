@@ -1,5 +1,5 @@
 {
-  "name": "dojo-webpack-loader-v2",
+  "name": "webpack-loader-dojo",
   "version": "2.0.0",
   "description": "Webpack 2 loader for Dojo Toolkit v. 1.x",
   "main": "index.js",
