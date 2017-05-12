@@ -11,7 +11,7 @@ module: {
             {
                 test: /\.js$/,
                 use: [{
-                    loader: 'dojo-webpack-loader',
+                    loader: 'webpack-loader-dojo',
                     options: {
                         // We should specify paths to core and dijit modules because we using both
                         dojoCorePath: path.resolve(__dirname, './bower_components/dojo/'),
