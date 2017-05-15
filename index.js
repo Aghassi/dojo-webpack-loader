@@ -169,7 +169,7 @@ function mapDependency(module, options, dep){
     if (norm_dep.main == 'dojo/dojo') result_module = 'dojo/main';
     else if (norm_dep.main == 'require') result_module = loaderLibDependency(module, './lib/dojo-require');
     else if (norm_dep.main == 'module'){
-        module.inject.prepend += dep.name + "={id:" + JSON.stringify(module.normalizedName ? module.normalizedName : '') + "}";
+        module.inject.prepend += dep.name + "={i:" + JSON.stringify(module.normalizedName ? module.normalizedName : '') + "}";
         result_module = norm_dep.main;
     }
     if (!result_module) result_module = loaderLibDependency(module, './lib/no-module');
