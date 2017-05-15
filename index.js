@@ -11,7 +11,7 @@ function loaderLibDependency(module, dep_str){
 // Change content of module on load
 function preprocessModule(module, options, content){
     var register_in_dojo_require = module.isNls && module.normalizedName;
-    
+
     switch (module.normalizedName) {
         // for dojo/has - inject staticHasFeatures
         case 'dojo/has':
@@ -152,6 +152,7 @@ function mapDependency(module, options, dep){
                 else throw new Error('DojoWebpackLoader: dojo/request/default cannot choose loader');
                 break;
             case 'dojo/text':
+            case 'text':
                 // use webpack raw-loader instead of dojo/text
                 result_loaders.push("raw-loader");
                 break;
@@ -159,7 +160,8 @@ function mapDependency(module, options, dep){
                 // Will be loaded via DojoWebpackLoader
                 break;
             default:
-                debugger;
+                // No override to apply, just push the requested loader into the result
+                result_loaders.push(norm_dep.loaders[i]);
                 break;
         }
     }
@@ -175,7 +177,7 @@ function mapDependency(module, options, dep){
     return (result_loaders.length ? result_loaders.join("!") + "!" : "") + result_module;
 }
 
-// Set map of 
+// Set map of
 function processNlsModule(module, parsed, options){
     try {
         var f = new Function("'using strict'; return " + parsed.moduleBody + ";");
