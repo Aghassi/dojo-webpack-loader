@@ -112,12 +112,13 @@ parser.parseModule = function(content){
             }
         }
     } else {
-        var nls_match = defineNlsRegExp.exec(content);
+        var no_comments = stripComments(content);
+        var nls_match = defineNlsRegExp.exec(no_comments);
         if (nls_match){
             result.moduleBody =  "{" + nls_match[2] + "}";
             result.type = "nls";
             result.save = function (deps, inject){
-                var res_str = content.substr(0, nls_match.index);
+                var res_str = no_comments.substr(0, nls_match.index);
                 // define(
                 res_str += nls_match[1];
                 if (inject && (inject.prepend || inject.append || inject.dependencies.length > 0)){
@@ -139,7 +140,7 @@ parser.parseModule = function(content){
                 else res_str += this.moduleBody;
                 // define(...);
                 res_str += ")";
-                res_str += content.substr(nls_match.index + nls_match[0].length);
+                res_str += no_comments.substr(nls_match.index + nls_match[0].length);
                 return res_str;
             }
         }
