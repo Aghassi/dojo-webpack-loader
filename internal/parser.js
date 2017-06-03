@@ -28,7 +28,7 @@ parser.parseModule = function(content){
     if (define_match){
         // Process header of module ctor func:
         var function_match = /function\s*\(([\s\S]*?)\)/.exec(content.substring(define_match.index + define_match[0].length));
-        var function_arguments_text = function_match[1];
+        var function_arguments_text = stripComments(function_match[1]);
         var function_arguments_array = function_arguments_text.split(",");
         var function_arguments_count = function_arguments_array.length; // count of really used dependencies
         if (function_arguments_count == 1 && function_arguments_text.trim() == '') function_arguments_count = 0;
@@ -41,7 +41,7 @@ parser.parseModule = function(content){
             var save_template_chunks = [content.substr(0, define_match.index) + define_match[1] + '['];
             var cur_chunk = 0;
             // list of module depencies: "module1", 'module2' ...
-            var cur_incl_str = define_match[2];
+            var cur_incl_str = stripComments(define_match[2]);
             var dep_strpos_start;
             while ((dep_strpos_start = cur_incl_str.search(quoteRegExp)) >= 0){
                 save_template_chunks[cur_chunk] = (save_template_chunks[cur_chunk] ? save_template_chunks[cur_chunk] : '') +
@@ -112,12 +112,13 @@ parser.parseModule = function(content){
             }
         }
     } else {
-        var nls_match = defineNlsRegExp.exec(content);
+        var no_comments = stripComments(content);
+        var nls_match = defineNlsRegExp.exec(no_comments);
         if (nls_match){
             result.moduleBody =  "{" + nls_match[2] + "}";
             result.type = "nls";
             result.save = function (deps, inject){
-                var res_str = content.substr(0, nls_match.index);
+                var res_str = no_comments.substr(0, nls_match.index);
                 // define(
                 res_str += nls_match[1];
                 if (inject && (inject.prepend || inject.append || inject.dependencies.length > 0)){
@@ -139,7 +140,7 @@ parser.parseModule = function(content){
                 else res_str += this.moduleBody;
                 // define(...);
                 res_str += ")";
-                res_str += content.substr(nls_match.index + nls_match[0].length);
+                res_str += no_comments.substr(nls_match.index + nls_match[0].length);
                 return res_str;
             }
         }
