@@ -30,5 +30,15 @@ module: {
     },
 ```
 
+## Development
+
+1. Clone
+1. `yarn`
+1. `npm link` to which ever repo you intend to use with
+
+## Tests
+
+None, but we are always looking for contributions! There are going to be some when I have a chance. I promise...
+
 ## License
 [The MIT License (MIT)](http://opensource.org/licenses/MIT)
