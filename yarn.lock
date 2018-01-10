@@ -4,37 +4,37 @@
 
 big.js@^3.1.3:
   version "3.2.0"
-  resolved "https://registry.npmjs.intuit.net/b/big.js/_attachments/big.js-3.2.0.tgz#a5fc298b81b9e0dca2e458824784b65c52ba588e"
+  resolved "https://registry.yarnpkg.com/big.js/-/big.js-3.2.0.tgz#a5fc298b81b9e0dca2e458824784b65c52ba588e"
 
 define-property@^0.2.5:
   version "0.2.5"
-  resolved "https://registry.npmjs.intuit.net/d/define-property/_attachments/define-property-0.2.5.tgz#c35b1ef918ec3c990f9a5bc57be04aacec5c8116"
+  resolved "https://registry.yarnpkg.com/define-property/-/define-property-0.2.5.tgz#c35b1ef918ec3c990f9a5bc57be04aacec5c8116"
   dependencies:
     is-descriptor "^0.1.0"
 
 emojis-list@^2.0.0:
   version "2.1.0"
-  resolved "https://registry.npmjs.intuit.net/e/emojis-list/_attachments/emojis-list-2.1.0.tgz#4daa4d9db00f9819880c79fa457ae5b09a1fd389"
+  resolved "https://registry.yarnpkg.com/emojis-list/-/emojis-list-2.1.0.tgz#4daa4d9db00f9819880c79fa457ae5b09a1fd389"
 
 esprima-extract-comments@^0.2.1:
   version "0.2.1"
-  resolved "https://registry.npmjs.intuit.net/e/esprima-extract-comments/_attachments/esprima-extract-comments-0.2.1.tgz#9018d8df37ffd95dd615015a8c5f0475ed743423"
+  resolved "https://registry.yarnpkg.com/esprima-extract-comments/-/esprima-extract-comments-0.2.1.tgz#9018d8df37ffd95dd615015a8c5f0475ed743423"
   dependencies:
     esprima "^2.7.1"
 
 esprima@^2.7.1:
   version "2.7.3"
-  resolved "https://registry.npmjs.intuit.net/e/esprima/_attachments/esprima-2.7.3.tgz#96e3b70d5779f6ad49cd032673d1c312767ba581"
+  resolved "https://registry.yarnpkg.com/esprima/-/esprima-2.7.3.tgz#96e3b70d5779f6ad49cd032673d1c312767ba581"
 
 extend-shallow@^2.0.1:
   version "2.0.1"
-  resolved "https://registry.npmjs.intuit.net/e/extend-shallow/_attachments/extend-shallow-2.0.1.tgz#51af7d614ad9a9f610ea1bafbb989d6b1c56890f"
+  resolved "https://registry.yarnpkg.com/extend-shallow/-/extend-shallow-2.0.1.tgz#51af7d614ad9a9f610ea1bafbb989d6b1c56890f"
   dependencies:
     is-extendable "^0.1.0"
 
 extract-comments@^0.10.1:
   version "0.10.1"
-  resolved "https://registry.npmjs.intuit.net/e/extract-comments/_attachments/extract-comments-0.10.1.tgz#8b6031808a2f5fde1cd67bf8317b918204304408"
+  resolved "https://registry.yarnpkg.com/extract-comments/-/extract-comments-0.10.1.tgz#8b6031808a2f5fde1cd67bf8317b918204304408"
   dependencies:
     define-property "^0.2.5"
     esprima-extract-comments "^0.2.1"
@@ -43,23 +43,23 @@ extract-comments@^0.10.1:
 
 is-accessor-descriptor@^0.1.6:
   version "0.1.6"
-  resolved "https://registry.npmjs.intuit.net/i/is-accessor-descriptor/_attachments/is-accessor-descriptor-0.1.6.tgz#a9e12cb3ae8d876727eeef3843f8a0897b5c98d6"
+  resolved "https://registry.yarnpkg.com/is-accessor-descriptor/-/is-accessor-descriptor-0.1.6.tgz#a9e12cb3ae8d876727eeef3843f8a0897b5c98d6"
   dependencies:
     kind-of "^3.0.2"
 
 is-buffer@^1.1.5:
   version "1.1.6"
-  resolved "https://registry.npmjs.intuit.net/i/is-buffer/_attachments/is-buffer-1.1.6.tgz#efaa2ea9daa0d7ab2ea13a97b2b8ad51fefbe8be"
+  resolved "https://registry.yarnpkg.com/is-buffer/-/is-buffer-1.1.6.tgz#efaa2ea9daa0d7ab2ea13a97b2b8ad51fefbe8be"
 
 is-data-descriptor@^0.1.4:
   version "0.1.4"
-  resolved "https://registry.npmjs.intuit.net/i/is-data-descriptor/_attachments/is-data-descriptor-0.1.4.tgz#0b5ee648388e2c860282e793f1856fec3f301b56"
+  resolved "https://registry.yarnpkg.com/is-data-descriptor/-/is-data-descriptor-0.1.4.tgz#0b5ee648388e2c860282e793f1856fec3f301b56"
   dependencies:
     kind-of "^3.0.2"
 
 is-descriptor@^0.1.0:
   version "0.1.6"
-  resolved "https://registry.npmjs.intuit.net/i/is-descriptor/_attachments/is-descriptor-0.1.6.tgz#366d8240dde487ca51823b1ab9f07a10a78251ca"
+  resolved "https://registry.yarnpkg.com/is-descriptor/-/is-descriptor-0.1.6.tgz#366d8240dde487ca51823b1ab9f07a10a78251ca"
   dependencies:
     is-accessor-descriptor "^0.1.6"
     is-data-descriptor "^0.1.4"
@@ -67,25 +67,25 @@ is-descriptor@^0.1.0:
 
 is-extendable@^0.1.0:
   version "0.1.1"
-  resolved "https://registry.npmjs.intuit.net/i/is-extendable/_attachments/is-extendable-0.1.1.tgz#62b110e289a471418e3ec36a617d472e301dfc89"
+  resolved "https://registry.yarnpkg.com/is-extendable/-/is-extendable-0.1.1.tgz#62b110e289a471418e3ec36a617d472e301dfc89"
 
 json5@^0.5.0:
   version "0.5.1"
-  resolved "https://registry.npmjs.intuit.net/j/json5/_attachments/json5-0.5.1.tgz#1eade7acc012034ad84e2396767ead9fa5495821"
+  resolved "https://registry.yarnpkg.com/json5/-/json5-0.5.1.tgz#1eade7acc012034ad84e2396767ead9fa5495821"
 
 kind-of@^3.0.2:
   version "3.2.2"
-  resolved "https://registry.npmjs.intuit.net/k/kind-of/_attachments/kind-of-3.2.2.tgz#31ea21a734bab9bbb0f32466d893aea51e4a3c64"
+  resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-3.2.2.tgz#31ea21a734bab9bbb0f32466d893aea51e4a3c64"
   dependencies:
     is-buffer "^1.1.5"
 
 kind-of@^5.0.0:
   version "5.1.0"
-  resolved "https://registry.npmjs.intuit.net/k/kind-of/_attachments/kind-of-5.1.0.tgz#729c91e2d857b7a419a1f9aa65685c4c33f5845d"
+  resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-5.1.0.tgz#729c91e2d857b7a419a1f9aa65685c4c33f5845d"
 
 loader-utils@^1.1.0:
   version "1.1.0"
-  resolved "https://registry.npmjs.intuit.net/l/loader-utils/_attachments/loader-utils-1.1.0.tgz#c98aef488bcceda2ffb5e2de646d6a754429f5cd"
+  resolved "https://registry.yarnpkg.com/loader-utils/-/loader-utils-1.1.0.tgz#c98aef488bcceda2ffb5e2de646d6a754429f5cd"
   dependencies:
     big.js "^3.1.3"
     emojis-list "^2.0.0"
@@ -93,15 +93,15 @@ loader-utils@^1.1.0:
 
 parse-code-context@^0.2.1:
   version "0.2.2"
-  resolved "https://registry.npmjs.intuit.net/p/parse-code-context/_attachments/parse-code-context-0.2.2.tgz#144b8afb7219482d7e88c1eb6a765596f3a6ac0d"
+  resolved "https://registry.yarnpkg.com/parse-code-context/-/parse-code-context-0.2.2.tgz#144b8afb7219482d7e88c1eb6a765596f3a6ac0d"
 
 raw-loader@^0.5.1:
   version "0.5.1"
-  resolved "https://registry.npmjs.intuit.net/r/raw-loader/_attachments/raw-loader-0.5.1.tgz#0c3d0beaed8a01c966d9787bf778281252a979aa"
+  resolved "https://registry.yarnpkg.com/raw-loader/-/raw-loader-0.5.1.tgz#0c3d0beaed8a01c966d9787bf778281252a979aa"
 
 strip-comments@^0.4.4:
   version "0.4.4"
-  resolved "https://registry.npmjs.intuit.net/s/strip-comments/_attachments/strip-comments-0.4.4.tgz#b9caafc4fe905f96c091df89f9a7215f2aa629c6"
+  resolved "https://registry.yarnpkg.com/strip-comments/-/strip-comments-0.4.4.tgz#b9caafc4fe905f96c091df89f9a7215f2aa629c6"
   dependencies:
     extend-shallow "^2.0.1"
     extract-comments "^0.10.1"
