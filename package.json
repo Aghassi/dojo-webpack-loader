@@ -19,6 +19,7 @@
     "url": "https://github.com/Aghassi/dojo-webpack-loader.git"
   },
   "dependencies": {
+    "amdi18n-loader": "^0.6.2",
     "loader-utils": "^1.1.0",
     "raw-loader": "^0.5.1",
     "strip-comments": "^0.4.4"

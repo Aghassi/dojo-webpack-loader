@@ -49,7 +49,7 @@ function preprocessModule(module, options, content){
         register_in_dojo_require = register_in_dojo_require || options.dojoParserDijitWidgets;
     }
 
-    if (register_in_dojo_require){
+    if (register_in_dojo_require && !module.isNls){
         // Inject
         // 1. dojo-webpack-loader/lib/dojo-require dependency
         module.inject.dependencies.push({dep: loaderLibDependency(module, './lib/dojo-require'), name: "dojoWebpackLoaderRequire"});
@@ -157,7 +157,8 @@ function mapDependency(module, options, dep){
                 result_loaders.push("raw-loader");
                 break;
             case 'dojo/i18n':
-                // Will be loaded via DojoWebpackLoader
+                // Push i18n loader instead of relying on dojo/i18n
+                result_loaders.push("amdi18n-loader");
                 break;
             default:
                 // No override to apply, just push the requested loader into the result
