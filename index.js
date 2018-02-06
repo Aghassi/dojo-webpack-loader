@@ -241,15 +241,9 @@ function DojoWebpackLoader(content){
     // Parse module
     var content = preprocessModule(module, options, content);
     var parsed = parser.parseModule(content);
-    var new_deps = [];
-    if (!module.isNls) {
-        new_deps = parsed.deps.map(function (dep) {
-            return mapDependency(module, options, dep);
-        });
-    }
-    else {
-        processNlsModule(module, parsed, options);
-    }
+    var new_deps = parsed.deps.map(function (dep) {
+        return mapDependency(module, options, dep);
+    });
     return parsed.save(new_deps, module.inject);
 }
 
